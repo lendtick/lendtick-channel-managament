@@ -34,7 +34,7 @@ class ChannelDataController  extends Controller
             $channel =  $request->channels;
             $data_db  = $this->ChannelRepo->find('id_channel',$channel);
 
-            if (count($data_db)==0) { throw New \Exception('Params not found', 500); }
+            if (count($data_db)==0) { return response()->json(Api::format(0, 'Channel not found', []),400);}
             // dd($channel);die();
             // response
             $json = array(
