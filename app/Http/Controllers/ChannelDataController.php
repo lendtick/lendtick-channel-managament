@@ -21,20 +21,21 @@ class ChannelDataController  extends Controller
     
 
     public function index(Request $request){ 
-        phpinfo(); die();
+        // phpinfo(); die();
         try {
 
 
             $this->validate($request, [
-                'channel'            => 'required'
+                'channels'            => 'required'
             ]); 
 
             $status   = 1;
             $httpcode = 200;
-            $data_db  = $this->ChannelRepo->find('id_channel',$request->channel);
+            $channel =  $request->channels;
+            $data_db  = $this->ChannelRepo->find('id_channel',$channel);
 
             if (count($data_db)==0) { throw New \Exception('Params not found', 500); }
-
+            // dd($channel);die();
             // response
             $json = array(
                 'id' => sha1(time()), 
