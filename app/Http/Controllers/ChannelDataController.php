@@ -16,12 +16,14 @@ class ChannelDataController  extends Controller
     public function __construct(ChannelRepo $ChannelRepo)
     {
         $this->ChannelRepo = $ChannelRepo;
+        ini_set('memory_limit', '-1');
     }
     
 
     public function index(Request $request){ 
 
         try {
+
 
             $this->validate($request, [
                 'channel'            => 'required'
