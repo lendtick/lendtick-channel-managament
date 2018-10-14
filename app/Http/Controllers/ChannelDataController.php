@@ -21,7 +21,7 @@ class ChannelDataController  extends Controller
     
 
     public function index(Request $request){ 
-
+        phpinfo(); die();
         try {
 
 
