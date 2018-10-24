@@ -123,11 +123,19 @@ class ChannelDataController  extends Controller
     }
 
     /// get data sync 
-    public function DataSync(){  
+    public function DataSync(Request $request){  
         try{
+            $this->validate($request, [
+                'limit'         => 'required|integer',
+                'offset'        => 'required|integer'
+            ]);  
+
+            $offset = (int) $request->offset;
+            $limit = (int) $request->limit;
+
             $status   = 1;
             $httpcode = 200;
-            $data     = DB::connection('mongodb')->collection('sync')->get();
+            $data     = DB::connection('mongodb')->collection('sync')->skip($offset)->take($limit)->get();
             $errorMsg = null;
         }catch(\Exception $e){
             $status   = 0;
