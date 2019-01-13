@@ -22,9 +22,7 @@ class ChannelDataController  extends Controller
 
     public function index(Request $request){ 
         // phpinfo(); die();
-        try {
-
-
+        try { 
             $this->validate($request, [
                 'channels'            => 'required'
             ]); 
@@ -41,13 +39,13 @@ class ChannelDataController  extends Controller
                 'id' => sha1(time()), 
                 'desc' => array(
                     "lang" => "id",
-                    "val" => "Product ganteng untuk kamu yang tampan"
+                    "val" => "Lutfi Testing Kembali"
                 ),
                 "name" => "Camera Bigo Live",
                 "category" => "Peralatan Tampan", // plain text
                 "brand" => array(
                     "img" => array(
-                        "src" => "http =>//i.sears.com/s/i/bl/image/spin_prod_metadata_168138610"
+                        "src" => "http://i.sears.com/s/i/bl/image/spin_prod_metadata_168138610.jpg"
                     ),
                     "name" => "Bigo"
                 ),
@@ -59,21 +57,21 @@ class ChannelDataController  extends Controller
                         array(
                             "img" => array(
                                         "height" => "1900", // ukuran gambar di set pas nanti dari sync product
-                                        "src" => "http =>//c.shld.net/rpx/i/s/i/spin/image/spin_prod_967112812",
+                                        "src" => "http://c.shld.net/rpx/i/s/i/spin/image/spin_prod_967112812",
                                         "width" => "1900"
                                     )
                         ),
                         array(
                             "img" => array(
                                 "height" => "1900",
-                                "src" => "http =>//c.shld.net/rpx/i/s/i/spin/image/spin_prod_945877912",
+                                "src" => "http://c.shld.net/rpx/i/s/i/spin/image/spin_prod_945877912",
                                 "width" => "1900"
                             )
                         ),
                         array(
                             "img" => array(
                                 "height" => "1900",
-                                "src" => "http =>//c.shld.net/rpx/i/s/i/spin/image/spin_prod_945878012",
+                                "src" => "http://c.shld.net/rpx/i/s/i/spin/image/spin_prod_945878012",
                                 "width" => "1900"
                             )
                         )
